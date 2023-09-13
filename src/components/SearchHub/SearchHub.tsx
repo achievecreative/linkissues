@@ -1,25 +1,16 @@
 import algoliasearch, { SearchClient } from 'algoliasearch';
 import {
   Configure,
-  CurrentRefinements,
   InstantSearch,
   InstantSearchSSRProvider,
   InstantSearchServerState,
-  RefinementList,
-  SearchBox,
-  SortBy,
-  getServerState,
 } from 'react-instantsearch';
-import styles from './SearchHub.module.css';
 import SearchResults from './SearchResults';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { SearchHubProps } from './SearchHub.types';
 import { SortByItem } from 'instantsearch.js/es/connectors/sort-by/connectSortBy';
 import { GetStaticComponentProps } from '@sitecore-jss/sitecore-jss-nextjs';
-import Image from 'next/image';
-import SearchResultTotals from './SearchResutsTotal';
-import { renderToString } from 'react-dom/server';
 
 const SearchHub = (props: SearchHubProps): JSX.Element => {
   const { fields } = props;
